@@ -686,7 +686,7 @@ footer p {
 
     /* Hide nav menu by default on mobile */
     nav ul.nav-menu {
-        display: none;
+        display: none !important;
         position: fixed;
         top: 64px;
         left: 0;
@@ -702,10 +702,15 @@ footer p {
         overflow-y: auto;
         z-index: 99;
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     nav ul.nav-menu.active {
-        display: flex;
+        display: flex !important;
+        opacity: 1;
+        transform: translateX(0);
     }
 
     nav ul.nav-menu li {
